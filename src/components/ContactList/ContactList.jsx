@@ -13,6 +13,6 @@ export function ContactList({ filterList, deleteItem }) {
 }
     
 ContactList.propTypes = {
-    filterList: PropTypes.func,
-    deleteItem: PropTypes.func,
+    filterList: PropTypes.func.isRequired,
+    deleteItem: PropTypes.func.isRequired,
 }

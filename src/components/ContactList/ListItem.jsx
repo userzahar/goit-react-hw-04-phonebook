@@ -11,7 +11,7 @@ export function LI({ contact, children}) {
 }
 
 LI.propTypes = {
-  contact: PropTypes.object,
-    children: PropTypes.element,
+  contact: PropTypes.object.isRequired,
+    children: PropTypes.element.isRequired,
 };
 

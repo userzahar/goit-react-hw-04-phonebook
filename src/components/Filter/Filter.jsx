@@ -9,5 +9,5 @@ export function Filter ({handleChange}) {
 }
 
 Filter.propTypes = {
-    handleChange:PropTypes.func,
+    handleChange:PropTypes.func.isRequired,
 }

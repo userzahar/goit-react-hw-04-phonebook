@@ -6,5 +6,5 @@ export function Button({ text, clickHeandler }) {
 
 Button.propTypes = {
   text: PropTypes.string,
-    clickHeandler: PropTypes.func,
+  clickHeandler: PropTypes.func,
 };

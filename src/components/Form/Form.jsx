@@ -3,6 +3,7 @@ import { LabelStyled } from "components/Filter/FilterStyled";
 import { nanoid } from "nanoid";
 import { useState } from "react";
 import { InputStyled } from "./StyledInput";
+import PropTypes from "prop-types";
 
 export function Form({ createContacts }) {
     const [name, setName] = useState('');
@@ -15,6 +16,7 @@ export function Form({ createContacts }) {
             case "name": setName(target.value);
                 break;
             case "number": setNumber(target.value);
+                break;
             default: ;
         }
     }
@@ -60,4 +62,8 @@ export function Form({ createContacts }) {
         </form>
 
     
+}
+
+Form.propTypes = {
+    createContacts:PropTypes.func.isRequired,
 }
