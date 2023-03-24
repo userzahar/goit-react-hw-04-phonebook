@@ -76,7 +76,7 @@ export class OldApp extends Component {
 
 export function App () {
   const [filter, setFilter] = useState('');
-  const[contacts, setContacts] = useState([
+  const[contacts, setContacts] = useState(JSON.parse(localStorage.getItem('contacts')) || [
     { id: 'id-1', name: 'Volodymyr Zelenskyi', number: '+380-459-12-5678' },
     { id: 'id-2', name: 'Petro Poroshenko', number: '+380-443-89-1256' },
     { id: 'id-3', name: 'Viktor Yushchenko', number: '+380-645-17-7943' }])
@@ -109,6 +109,12 @@ export function App () {
   const handleDelete = (id) => {
     return setContacts(() => contacts.filter(contact => contact.id !== id));
   }        
+   useEffect(() => {
+
+    localStorage.setItem('contacts', JSON.stringify(contacts))
+
+  }, [contacts])
+  
   return <>
       <h1>Phonebook</h1>
       <Form createContacts={createContacts} />
