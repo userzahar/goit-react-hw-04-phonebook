@@ -108,20 +108,7 @@ export function App () {
   }
   const handleDelete = (id) => {
     return setContacts(() => contacts.filter(contact => contact.id !== id));
-  }
-  useEffect(() => {
-
-    localStorage.setItem('contacts', JSON.stringify(contacts))
-    console.log("🎊 'contacts')):", JSON.parse(localStorage.getItem('contacts')))
-  }, [contacts])
-  
-  useEffect(()=> {
-    if (localStorage.getItem('contacts')) setContacts(prev => [...JSON.parse(localStorage.getItem('contacts'))])
-    console.log("🚀 ~ [...JSON.parse(localStorage.getItem('contacts'))]:", [...JSON.parse(localStorage.getItem('contacts'))])
-  },[])
- 
-    
-        
+  }        
   return <>
       <h1>Phonebook</h1>
       <Form createContacts={createContacts} />
